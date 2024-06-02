@@ -8,12 +8,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 
-  --primary-text-color: #181820;
-  --secondary-text-color: #5c5c62;
+  --primary-text-color: #244220;
+  --secondary-text-color: #1d361a;
+  --hover-color: #397432;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --border-color: #166b0545;
+  --text-decoration-color: #167e1f;
 }
 
 .container {
@@ -87,7 +88,6 @@ body {
 .contact-info__block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .contact-info__block--center {
@@ -99,6 +99,14 @@ body {
   text-decoration: none;
   display: flex;
   justify-content: start;
+  align-items: center;
+}
+
+.contact-info__item:hover {
+  color: var(--hover-color);
+  .contact-info__item-icon path {
+    fill: var(--hover-color);
+  }
 }
 
 .contact-info__item:not(:last-child) {
@@ -118,13 +126,14 @@ body {
 
 .contact-info__item-icon {
   height: 1.1428rem;
+  width: 100%;
   vertical-align: text-bottom;
 }
 
 .contact-info__avatar {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
@@ -165,6 +174,16 @@ body {
 .skills__text {
   color: var(--secondary-text-color);
   text-align: justify;
+  list-style-type: none;
+}
+
+.skills__text li {
+  margin-bottom: 4px;
+}
+
+.skills__text li::before {
+  content: "💻";
+  padding-right: 6px;
 }
 
 .experiences {
